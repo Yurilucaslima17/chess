@@ -1,0 +1,14 @@
+.table {
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+}
+.lightBrown {
+  background-color: #ffffff;
+}
+.heavyBrown {
+  background-color: #000000;
+}
+.tile {
+  width: 100px;
+  height: 100px;
+}

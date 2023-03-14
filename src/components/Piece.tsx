@@ -33,19 +33,24 @@ const images: { [key: string]: StaticImageData | string } = {
 };
 
 const Piece = (prop: Property) => {
-  const changeTile = () => {
-    prop.changeTile()
-  };
   const src = images[prop.type];
-  console.log(src);
   return (
     <div
       className={styles.container}
-      onClick={() => changeTile}
-      onDragEnd={() => changeTile}
+      onMouseDown={(e) => prop.onMouseDown(e)}
+      onMouseMove={(e) => prop.onMouseMove(e)}
+      onMouseUp={(e) => prop.onMouseUp(e)}
     >
-      {src !== "" && (
-        <Image className={styles.piece} src={src} alt={prop.type} />
+      {src && (
+        <Image
+          width={100}
+          height={100}
+          className={styles.piece}
+          src={src}
+          alt={prop.type}
+          onDragStart={(e) => e.preventDefault()}
+          aria-details={prop.position.join(' ')}
+        />
       )}
     </div>
   );

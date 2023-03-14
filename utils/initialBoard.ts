@@ -4,13 +4,13 @@ const initialBoard = () => {
   const horizontalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"].sort(
     (a, b) => Number(b) - Number(a)
   );
-  const verticalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
+  const venticalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
   const resp: Tile[] = [];
   for (let i = 0; i < horizontalAxis.length; i++) {
-    for (let j = 0; j < verticalAxis.length; j++) {
+    for (let j = 0; j < venticalAxis.length; j++) {
       let piece: PieceType = PieceType.None;
       if (horizontalAxis[i] === "1") {
-        switch (verticalAxis[j]) {
+        switch (venticalAxis[j]) {
           case "a":
             piece = PieceType.RookW;
             break;
@@ -41,7 +41,7 @@ const initialBoard = () => {
       } else if (horizontalAxis[i] === "7") {
         piece = PieceType.PawnB;
       } else if (horizontalAxis[i] === "8") {
-        switch (verticalAxis[j]) {
+        switch (venticalAxis[j]) {
           case "a":
             piece = PieceType.RookB;
             break;
@@ -70,7 +70,7 @@ const initialBoard = () => {
       }
 
       resp.push({
-        coordinates: [horizontalAxis[i], verticalAxis[j]],
+        coordinates: [venticalAxis[j], horizontalAxis[i]],
         piece: piece,
       });
     }

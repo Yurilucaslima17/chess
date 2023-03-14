@@ -37,6 +37,9 @@ export interface IPiece {
   position: string[];
   changeTile: Function;
   tiles: Tile[];
+  onMouseDown: Function
+  onMouseMove: Function
+  onMouseUp: Function
 }
 
 export interface Property {
@@ -44,4 +47,7 @@ export interface Property {
   position: string[];
   changeTile: Function;
   tiles: Tile[];
+  onMouseDown: Function
+  onMouseMove: Function
+  onMouseUp: Function
 }
